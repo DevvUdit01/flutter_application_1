@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/homepage.dart';
 import 'package:flutter_application_1/utils/routes.dart';
+import 'package:cupertino_icons/cupertino_icons.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -113,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                       child: changeButton
                       ?Icon(
                         Icons.done,
-                        color: Colors.white,
+                        color:Colors.white,
                         )
                       :Text(
                         "Login",
