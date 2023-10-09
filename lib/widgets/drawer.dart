@@ -18,8 +18,12 @@ class MyDrawer extends StatelessWidget {
               child: UserAccountsDrawerHeader(
                 decoration: BoxDecoration(color:Colors.deepPurple),
                 margin: EdgeInsets.zero,
-                accountName: Text("Udit Pal",), 
-                accountEmail: Text("devv.Udit@gmail.com"),
+                accountName: Text("Udit Pal",style: TextStyle(
+              color: Colors.white,
+              ),), 
+                accountEmail: Text("devv.Udit@gmail.com",style: TextStyle(
+              color: Colors.white,
+              ),),
                 currentAccountPicture: CircleAvatar(
                   backgroundImage: NetworkImage(imageurl),
                 ),
