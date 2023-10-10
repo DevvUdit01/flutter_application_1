@@ -19,14 +19,17 @@ void initstate(){
 }
 
 loadData()async{
-   var catalogjson = await rootBundle.loadString("assets/files/catalog.json");
-   var decodeData = jsonDecode(catalogjson);
+  await Future.delayed(Duration(seconds:2));
+   final catalogjson = await rootBundle.loadString("assets/files/catalog.json");
+   final decodeData = jsonDecode(catalogjson);
    var productsData = decodeData("products");
+   CatalogModel.items= List.from(productsData)
+   .map<Item>((item) => item.fromMap(item)).toList();
+   setState(() {});
 
 }
 
   Widget build(BuildContext context) {
-    final dummylist = List.generate(15,(index) => CatalogModel.items[0]);
     return Scaffold(
       appBar: AppBar(
         title: Text("FlopKart"),
@@ -34,14 +37,14 @@ loadData()async{
       
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: ListView.builder(
-          itemCount: dummylist.length,
+        child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)? ListView.builder(
+          itemCount: CatalogModel.items.length,
           itemBuilder: (context, index) {
             return ItemWidget(
-              item: dummylist[index],
+              item: CatalogModel.items[index],
             );
           },
-        ),
+        ):Center(child: CircularProgressIndicator(),),
       ),
      // body: ListView.builder(itemBuilder: itemBuilder)
     drawer: MyDrawer(),

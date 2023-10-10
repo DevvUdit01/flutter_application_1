@@ -17,6 +17,7 @@ class MyDrawer extends StatelessWidget {
               
               child: UserAccountsDrawerHeader(
                 decoration: BoxDecoration(color:Colors.deepPurple),
+                
                 margin: EdgeInsets.zero,
                 accountName: Text("Udit Pal",style: TextStyle(
               color: Colors.white,
