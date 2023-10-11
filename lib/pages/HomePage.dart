@@ -24,7 +24,7 @@ loadData()async{
    final decodeData = jsonDecode(catalogjson);
    var productsData = decodeData("products");
    CatalogModel.items= List.from(productsData)
-   .map<Item>((item) => item.fromMap(item)).toList();
+   .map<Item>((item) => Item.fromMap(item)).toList();
    setState(() {});
 
 }

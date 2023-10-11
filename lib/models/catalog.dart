@@ -1,9 +1,7 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'dart:convert';
 
-//day 15 commited with errors
+import 'dart:convert';
 class CatalogModel{
-  static List<Item> items;
+static List<Item> items =[];
 }
 
 class Item {
@@ -12,24 +10,20 @@ class Item {
    final String desc; 
    final num price; 
    final String color; 
-   final String image; 
-  
+   final String image;
   Item({
-    required this.id,
+     required this.id,
     required this.name,
-    required this.desc,
+    required this.desc,   
     required this.price,
     required this.color,
     required this.image,
   });
 
-   
-
-
   Item copyWith({
     String? id,
     String? name,
-    String? desc,
+    String? desc,   
     num? price,
     String? color,
     String? image,
@@ -56,6 +50,7 @@ class Item {
   }
 
   factory Item.fromMap(Map<String, dynamic> map) {
+    //if(map==null)return null;
     return Item(
       id: map['id'] as String,
       name: map['name'] as String,
@@ -97,8 +92,4 @@ class Item {
       color.hashCode ^
       image.hashCode;
   }
- } 
- 
- 
-  
-  
+  }
