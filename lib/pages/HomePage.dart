@@ -13,7 +13,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
-void initstate(){
+void initState(){
   super.initState();
   loadData();
 }
@@ -22,7 +22,7 @@ loadData()async{
   await Future.delayed(Duration(seconds:2));
    final catalogjson = await rootBundle.loadString("assets/files/catalog.json");
    final decodeData = jsonDecode(catalogjson);
-   var productsData = decodeData("products");
+   var productsData = decodeData["products"];
    CatalogModel.items= List.from(productsData)
    .map<Item>((item) => Item.fromMap(item)).toList();
    setState(() {});

@@ -112,7 +112,7 @@
  { 
     "id": "phone013", 
     "name": "IPhone 4", 
-    "decs": "apple iphone 4th genration", 
+    "desc": "apple iphone 4th genration", 
     "price": 13999, 
     "color": "833505a", 
     "image": "https://drop.ndtv.com/TECH/product_database/images/530201374039PM_120_iPhone_4.png?downsize=*:90"
