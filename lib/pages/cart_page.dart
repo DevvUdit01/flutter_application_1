@@ -9,7 +9,7 @@ class cartpage extends StatelessWidget {
       backgroundColor: context.canvasColor,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         title: "Cart".text.make(),
         ),
 
@@ -33,7 +33,11 @@ class _CartTotal extends StatelessWidget {
         children: [
           "\$9999".text.xl5.color(context.theme.hintColor).make(),
           30.widthBox,
-          ElevatedButton(onPressed: (){}, 
+          ElevatedButton(onPressed: (){
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: "Buying is not supported yet".text.make(),
+              ));
+          }, 
           style: ButtonStyle(
             backgroundColor: 
                 MaterialStateProperty.all(context.theme.focusColor)),
