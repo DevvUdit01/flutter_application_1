@@ -8,11 +8,10 @@ import 'package:flutter_application_1/utils/routes.dart';
 import 'package:flutter_application_1/widgets/home_widgets/Catalog_Header.dart';
 import 'package:flutter_application_1/widgets/home_widgets/Catalog_List.dart';
 import 'package:velocity_x/velocity_x.dart';
-
+import 'package:flutter_application_1/widgets/themes.dart';
 import 'package:flutter_application_1/models/catalog.dart';
 // import 'package:flutter_application_1/widgets/drawer.dart';
 // import 'package:flutter_application_1/widgets/item_widgets.dart';
-import 'package:flutter_application_1/widgets/themes.dart';
 
 class HomePage extends StatefulWidget {
   
@@ -40,13 +39,14 @@ loadData()async{
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
       floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          navigator: Navigator.pushNamed(context, MyRoutes.cartRoute);
-        },
-        backgroundColor: MyTheme.darkBluish,
-        child: Icon(CupertinoIcons.cart),
+        onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
+        backgroundColor: MyTheme.lightBliush,
+        child: Icon(
+          CupertinoIcons.cart,
+          color: Colors.white,
+          ),
       ),
       body: SafeArea(
         child: Container(

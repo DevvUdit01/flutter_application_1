@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/homepage.dart';
 import 'package:flutter_application_1/utils/routes.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -31,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white,
+      color: context.canvasColor,
       child:SingleChildScrollView(
         child: Form(
           key: _formkey,
@@ -102,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                       
                 Material(
-                  color: Colors.deepPurple,
+                  color: context.theme.focusColor,
                   borderRadius: BorderRadius.circular(changeButton?50:8),
                   child: InkWell(
                     onTap: () =>moveToHome(context),

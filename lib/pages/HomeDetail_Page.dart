@@ -15,11 +15,11 @@ class homeDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: context.canvasColor,
         elevation: 0),
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
       bottomNavigationBar:  Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
                 alignment: MainAxisAlignment.spaceBetween,
                 buttonPadding: EdgeInsets.zero,
@@ -27,7 +27,7 @@ class homeDetailPage extends StatelessWidget {
                   "\$ ${Catalog.price}".text.bold.xl4.red800.make(),
                   ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(MyTheme.darkBluish),
+                      backgroundColor: MaterialStateProperty.all(context.theme.focusColor),
                      shape: MaterialStateProperty.all(StadiumBorder()),
                    ),
                     onPressed: () {}, 
@@ -49,11 +49,11 @@ class homeDetailPage extends StatelessWidget {
                 arcType: VxArcType.convey,
                 edge: VxEdge.top,
                 child: Container(
-                   color: Colors.white,
+                   color: context.cardColor,
                    width: context.screenWidth,
                    child: Column(
                     children: [
-                      Catalog.name.text.xl.color(MyTheme.darkBluish).bold.make(),
+                      Catalog.name.text.xl.color(context.theme.hintColor).bold.make(),
                       Catalog.desc.text.textStyle(context.captionStyle).xl.make(),
                       10.heightBox,
                       "Dolor uio h relugeu rou dkl fd  ufsul  svdoruu rguyeg zdx j efte eofe rep b[tn nribeiob jbob ytuuiv gkyf ttdj uyjh gugg glig ugl uggft"
