@@ -9,12 +9,14 @@ import 'package:velocity_x/velocity_x.dart';
          cardColor: Colors.white,
          canvasColor: creamColor,
          focusColor: darkBluish,  //buttonColor
-         hintColor: darkBluish, //accentColor
+         hintColor: darkBluish,  //accentColor
+         textTheme: TextTheme(
+            headline6: TextStyle(color: Colors.black), // Adjust the color as needed
+          ), 
          appBarTheme: AppBarTheme( 
            color:Colors.white, 
            elevation: 0.0, 
            iconTheme: IconThemeData(color: Colors.black), 
-           //textTheme: Theme.of(context).textTheme, 
          ) 
          ); 
   
@@ -24,15 +26,15 @@ import 'package:velocity_x/velocity_x.dart';
          canvasColor: darkcreamColor,
          brightness: Brightness.dark,
          focusColor: lightBliush,     //buttonColor
-          hintColor:Colors.white, //accentColor
+          hintColor:Colors.white,  //accentColor
+            textTheme: TextTheme(
+            headline6: TextStyle(color: Colors.black), // Adjust the color as needed
+          ), 
          appBarTheme: AppBarTheme( 
            color:Colors.white, 
            elevation: 0.0, 
            iconTheme: IconThemeData(color: Colors.white), 
-           titleTextStyle: TextStyle()
-           textTheme: Theme.of(context).textTheme.copyWith(
-            headline6: 
-              context.textTheme.headline6?.copyWith(color: Colors.white)), 
+           titleTextStyle: TextStyle(),
          ), 
          ); 
       
