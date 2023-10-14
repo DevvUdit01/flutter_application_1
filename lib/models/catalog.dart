@@ -4,16 +4,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 class CatalogModel{
-  // Private constructor for the singleton pattern
-  CatalogModel._internal();
-
-  // The single instance of CartModel
-  static final CatalogModel catModel = CatalogModel._internal();
-
-  // Factory constructor to return the single instance
-  factory CatalogModel() {
-    return catModel;
-  }
 static List<Item> items =[];
 
 //get item by id 

@@ -2,17 +2,6 @@ import 'package:flutter_application_1/models/catalog.dart';
 
 class CartModel {
 
- // Private constructor for the singleton pattern
-  CartModel._internal();
-
-  // The single instance of CartModel
-  static final CartModel cartModel = CartModel._internal();
-
-  // Factory constructor to return the single instance
-  factory CartModel() {
-    return cartModel;
-  }
-
   //catalog field
   CatalogModel _catalog=CatalogModel();
 
