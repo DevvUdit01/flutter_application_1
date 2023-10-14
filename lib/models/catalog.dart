@@ -1,8 +1,5 @@
-
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
-import 'package:velocity_x/velocity_x.dart';
 class CatalogModel{
 static List<Item> items =[];
 
