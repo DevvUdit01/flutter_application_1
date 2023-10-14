@@ -33,7 +33,16 @@ class _CartTotal extends StatelessWidget {
       height: 200,
       child: Row(
         children: [
-          "\$${_cart.totalPrice}".text.xl5.color(context.theme.hintColor).make(),
+          VxBuilder(
+            mutations: {RemoveMutation},
+           builder: (context, _, __) {
+              return "\$${_cart.totalPrice}"
+                  .text
+                  .xl5
+                  .color(context.theme.hintColor)
+                  .make();
+            },
+          ),
           30.widthBox,
           ElevatedButton(onPressed: (){
             ScaffoldMessenger.of(context).showSnackBar(
@@ -55,6 +64,7 @@ class _CartTotal extends StatelessWidget {
 class _CartList extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
+    VxState.watch(context, on: [RemoveMutation]);
     final CartModel _cart = (VxState.store as MyStore).cart;
     return _cart.items.isEmpty
     ? "Nothing to Show".text.xl3.makeCentered()
@@ -64,10 +74,8 @@ class _CartList extends StatelessWidget{
         leading: Icon(Icons.done),
         trailing: IconButton(
           icon: Icon(Icons.remove_circle_outline),
-          onPressed: () {
-            _cart.remove(_cart.items[index]);
-          //setState(() {});
-          },
+          onPressed: () =>
+            RemoveMutation(_cart.items[index]),
            ),
       title: _cart.items[index].name.text.make(),
       )
