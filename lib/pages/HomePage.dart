@@ -47,7 +47,7 @@ loadData()async{
         mutations: {AddMutation,RemoveMutation},
         builder:(context,_,__) => FloatingActionButton(
           onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
-          backgroundColor: MyTheme.lightBliush,
+          backgroundColor: MyTheme.darkBluish,
           child: Icon(
             CupertinoIcons.cart,
             color: Colors.white,
